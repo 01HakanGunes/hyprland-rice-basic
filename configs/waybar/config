@@ -1,0 +1,60 @@
+{
+	"layer": "top",
+    "position": "top",
+	"mode": "dock",
+	"modules-left": ["hyprland/workspaces","cpu","memory","tray"],
+	"modules-center": ["clock"],
+	"modules-right": ["network","wireplumber", "bluetooth", "battery", "custom/logout"],
+	
+	"wireplumber": {
+		"format": "{volume}% {icon}",
+		"format-muted": "",
+		"on-click": "helvum",
+		"format-icons": ["", "", ""]
+	},
+	"network": {
+		"tooltip": true,
+		"format-wifi": "  {essid}",
+		"format-ethernet": "",
+		"on-click": "nm-connection-editor" 
+	},
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+	"tray":{
+		"icon-size":18,
+		"spacing": 10
+	},
+    "clock": {
+        "format": "{: %I:%M %p   %d/%m/%Y}"
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+	"hyprland/workspaces": {
+		"active-only": true
+	},
+	"bluetooth": {
+		"format": " {status}"
+	},
+	"custom/logout": {
+		"format": " {}",
+		"on-click": "wlogout"
+	}   
+}
